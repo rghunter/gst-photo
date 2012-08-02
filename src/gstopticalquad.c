@@ -165,6 +165,7 @@ gst_optical_quad_init (GstOpticalQuad * filter,
   gst_pad_set_getcaps_function (filter->srcpad,
                                 GST_DEBUG_FUNCPTR(gst_pad_proxy_getcaps));
 
+
   gst_element_add_pad (GST_ELEMENT (filter), filter->sinkpad);
   gst_element_add_pad (GST_ELEMENT (filter), filter->srcpad);
   filter->silent = FALSE;
@@ -219,6 +220,7 @@ gst_optical_quad_set_caps (GstPad * pad, GstCaps * caps)
   gst_structure_get_int(structure,"height",&height);
 
   init_frameprocessor(width,height);
+
 
   filter->input = cvCreateImage(cvSize(width,height),IPL_DEPTH_8U,3);
   filter->output = cvCreateImage(cvSize(width,height),IPL_DEPTH_8U,3);
