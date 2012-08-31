@@ -59,11 +59,13 @@ void process_frame(IplImage *input, IplImage *output)
 {
 
 	Mat raw_frame(input);
-
+	Mat color_frame;
+	
 	if(recvfrom(sock,buf,5,MSG_DONTWAIT,(struct sockaddr *)&from,&fromlen) > 0){
 		char filename[50];
+		cvtColor(raw_frame,color_frame,CV_RGB2BGR);
 		sprintf(filename,"frame_%i.jpg",counter);
-		save_image = raw_frame.clone();
+		save_image = color_frame.clone();
 		std::cout << "Saving Image" << std::endl;
 		imwrite(filename,save_image);
 		bitwise_not(raw_frame,output_frame);
