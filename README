@@ -9,6 +9,8 @@ Required packages:
 
 Build and install OpenCV from source (there's probably a way to do this with the repo version, but you'd have to relink)
 
+Tested July 31, 2013 with OpenCV Version 2.4.6.1
+
 INSTALLATION
 -----------
 
