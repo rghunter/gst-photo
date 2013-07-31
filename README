@@ -1,3 +1,33 @@
+Setting up gst-photo
+---------
+
+Required packages:
+	autoconf
+	build-essential
+	libtool
+	libgstreamer0.10-dev
+
+Build and install OpenCV from source (there's probably a way to do this with the repo version, but you'd have to relink)
+
+INSTALLATION
+-----------
+
+for ubuntu 12.04lts, the install process puts the plugin in a weird directory:
+
+/usr/lib/gstreamer-0.10/
+
+To install the plugin with the repo version, move the contents of the above directory to:
+
+32-bit
+
+sudo mv /usr/lib/i386-linux-gnu/gstreamer-0.10/libgstvideoparsersbad.so /usr/lib/i386-linux-gnu/gstreamer-0.10/libgstvideoparsersbad.so.bak
+
+
+64-bit
+
+sudo mv /usr/lib/x86_64-linux-gnu/gstreamer-0.10/libgstvideoparsersbad.so /usr/lib/x86_64-linux-gnu/gstreamer-0.10/libgstvideoparsersbad.so.bak
+
+
 WHAT IT IS
 ----------
 
