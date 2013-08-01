@@ -1,0 +1,5 @@
+#!/bin/sh
+
+sh capturetest.sh& 
+ssh root@192.168.1.53 ./stream-utils/OffOpticalFlow.sh
+

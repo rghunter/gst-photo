@@ -1,0 +1,11 @@
+#!/bin/sh
+if [ ! -d "/tmp/ramdisk" ]; then
+	mkdir /tmp/ramdisk
+	chmod 777 /tmp/ramdisk
+fi
+if mount | grep /tmp/ramdisk > /dev/null; then
+	echo "Already mounted"
+else
+	echo "Mounting..."
+	mount -t tmpfs -o size=512M tmpfs /tmp/ramdisk/
+fi

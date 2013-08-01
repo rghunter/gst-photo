@@ -1,0 +1,20 @@
+Stream Utils
+Ryan G. Hunter - TR Aeronautics
+<rhunter@traeronautics.com>
+Copyright 2013
+
+This folder contains startup and execution of the gst-photo plugin
+
+Step 1:
+
+Mount the ramdisk. This can be acomplished by executing:
+
+	$sudo ./mountRamdisk
+
+You will get a message either confirming, or claiming you already did this.
+
+Step 2:
+
+execute ./startstream to begin streaming the video. If you get an error, try restarting the gumstix.
+
+An example matlab grabber is in the MATLAB_Files folder. Its set to grab an image out of the ramdisk dir.
